@@ -15,7 +15,7 @@ spec:
         name: front
     spec:
       containers:
-      - image: kontinu/python-expert:v1.5
+      - image: luis/primer-ci:latest 612027185949.dkr.ecr.us-east-1.amazonaws.com/luis/primer-ci:latest
         name: front
         ports:
           - containerPort: 8080
