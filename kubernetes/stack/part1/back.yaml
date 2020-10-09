@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back
+  labels:
+    name: back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: back
+  template:
+    metadata:
+      labels:
+        name: back
+    spec:
+      containers:
+      - image: kontinu/go-expert:v1.0
+        name: back
+        ports:
+          - containerPort: 8080
+            name: back
+        resources: {}
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: back
+spec:
+  selector:
+      name: back
+  type: NodePort
+  ports:
+    - name: web
+      nodePort: 31004
+      port: 80
+      targetPort: 8080
