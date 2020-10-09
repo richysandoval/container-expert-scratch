@@ -15,7 +15,7 @@ spec:
         name: front
     spec:
       imagePullSecrets:
-          - awsecr-cred
+          - name: awsecr-cred
       containers:
       - image: 612027185949.dkr.ecr.us-east-1.amazonaws.com/luis/primer-ci:ffdd233
         name: front
